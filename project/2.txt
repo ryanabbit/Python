@@ -1,0 +1,11 @@
+Once you have two (or more) models, you should choose at least four pieces of text -- texts not used in your models' creation -- that you would be interested in classifying according to your models.
+
+For example, you could see if
+
+your Writ1 paper (or thesis) is more like W.S. or J.K.R.
+the Chicago Tribune is more like the NYT or the WSJ
+Bart Simpson is more like Michael Bluth or Raj Koothrappali
+or any other comparison you would like to brainstorm.
+
+
+Write a test() function -- their design is up to you -- that analyzes those texts and determines which of your models better describes them. For example, you can start with this:

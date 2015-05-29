@@ -1,0 +1,33 @@
+This is a test for project. I would like to finish this project as soon as possible. Because The final exam for ITS305 is so difficult!
+Once you've chosen your two (or more) categories, you will need to find source text that will define the model for each of those. Certainly we will stay within the bounds of academic fair use, which provide more than enough leeway here.
+
+Since you will want to be able to create, save, and return to your models later, you'll want to be able to write them out to file. The easiest way to do this is to write your four (or more) dictionaries into a bunch of files so that they are legal Python code: each dictionary named by a suitable variable name. Then, you can read in the file and use the variable names to assign those dictionaries to the spots they need to go.
+
+To get you started with this, here is a function that defines a small dictionary and saves it to a file, along with another that reads it back in and demonstrates that it has full access to the data structure, not only its string representation.
+
+Then, edit to use your own choice of text!!!
+
+If you do anything more, you should describe how the graders can run your tests -- you will want to make this as easy as possible to do, so write helper functions that will help the graders do so!
+
+Include in your final.zip archive whatever files will need to be read in to demonstrate your text-identification of these four texts! Alternatively, if you're using strings, you can include those strings in a python file and then import their variable names using the usual import command.
+
+Report the results, along with a short (e.g., one-paragraph) reflection of how well your "TextID" project worked in this case.
+
+Despite the "naive" in its name, this classifier has been hugely successful in distinguishing spam from non-spam ("ham") emails and, in different forms, it is used for many classification problems.
+
+The approach boils down to computing the likelihood score of a set of new text features, given a dictionary of those features' appearances in the original text. The reason that the algorithm is called "naive" is that we make the assumption that each feature is independent. Thus, we assume that the appearance of the word spell does not depend on the appearance of the word potter -- and that this independence holds for all pairs of words and pairs of features throughout the text. This assumption is certainly not true, but that turns out not to matter in many situations!
+
+With this assumption, Wikipedia derives the algorithm and summarizes it in a form I'd describe as less-than-illuminating:
+
+matchScore(self, other) 
+this takes in a second TextModel object, named other and should return the log of the likelihood that the other was produced from self, as noted in the detailed description of the algorithm below. Here is the concise pseudocode version (only considering the words dictionaries):
+Start the score at 0.
+Let total be the total number of words in self.words -- not only distinct words, but all of the repetitions of all of the words, added up.
+For each word in other.words...
+Check if the word is in self.words...
+If so, add the log of the probability that that word would be chosen at random from everything in self.words, times its number of appearances in other.words.
+If not, add the same thing, but use the probability 1.0/total as a reasonably small value. Be sure to still multiply by its frequency in other.words.
+
+Then, you can use the other dictionaries either to create four separate scores or to combine (add) them all into a single, overall score. Since they're logs, they're negative -- more on that next. 
+
+Note on logs    You can use math.log(value,10) to compute the log-base-10 of value. Using logs might help avoid the values getting too small, but what do those negative numbers mean? If your log-probability score is -5, that means the probability has (about) 5 zeros before the first non-zero digit, i.e., it's about 0.000001. Formally, it'd be four zeros, but what's important is that if another log-probability score was -10, then that second probability has about 10 zeros before the first non-zero digit, i.e., it's about 0.00000000001. That latter probability is much less likely than the former one. It's in those comparisons of likelihood that this technique works well. 

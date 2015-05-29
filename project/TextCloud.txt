@@ -1,0 +1,59 @@
+
+<html>
+    <head>
+        <title>Contact Us</title>
+		
+		    <style type="text/css">
+    <!--
+    body {
+      color:#000000;
+      background-color:#FFFFD4;
+      background-image:url('Background Image');
+      background-repeat:no-repeat;
+    }
+	h1 { 
+	   text-align:center; 
+	   color:MediumPurple;font-family:"Times New Roman", Times, serif;
+	   font-size:3em;
+	}
+	form {
+	margin-left:auto;
+	margin-right:auto;
+	width:25%;
+	}
+	#input1 {
+	
+	margin-right:auto;
+	width 30%;
+	}
+	a  { color:#0000FF; }
+    a:visited { color:#800080; }
+    a:hover { color:#008000; }
+    a:active { color:#FF0000; }
+    -->
+    </style>
+    </head>
+    
+	<body>
+		<h1>Welcome to Ryan and Sean's Text Comparision Tool</h1>
+        <p>Please fill out the following information and click submit:</p>
+
+        <form action="{% url 'contact' %}" method="post">{% csrf_token %}
+            {{ form.as_p }}
+            <input id= "input1" type="submit" value="Submit" />
+<p>
+Type some text (if you like):<br>
+<input type="text" name="textline" size="30">
+</p>
+<p>
+Please specify a file, or a set of files:<br>
+<input type="file" name="datafile" size="40">
+</p>
+<div>
+<input type="submit" value="Send">
+</div>
+        </form>
+    </body>
+</html>
+
+

@@ -1,0 +1,43 @@
+Hierarchical models
+
+Build a hierarchical model in which an object of TextModel contains a list of TextModels!
+
+This would be used, for example, to divide a single model of "Shakespeare" into two sub-models, perhaps
+
+Shakespeare comedies
+Shakespeare trajedies
+More finely, it could be used to divide a model of "Romeo and Juliet" into a "Romeo" submodel and a "Juliet" submodel.
+
+Similar subdivisions could be made for other sorts of source texts, as well.
+
+Displaying your models: TextClouds
+
+Note: this next section is optional extra-credit and is the project description from prior years...
+
+OldTextCloudsDescription
+
+i love cecilia 
+i love cecilia 
+i love cecilia 
+i love cecilia 
+i love cecilia 
+i love cecilia 
+i love cecilia 
+i love cecilia 
+i love cecilia 
+i love cecilia 
+i love cecilia 
+i love cecilia 
+i love cecilia 
+i love cecilia 
+i love cecilia 
+i love cecilia 
+i love cecilia 
+i love cecilia 
+i love cecilia 
+i love cecilia 
+i love cecilia 
+i love cecilia 
+i love cecilia 
+i love cecilia 
+i love cecilia x
